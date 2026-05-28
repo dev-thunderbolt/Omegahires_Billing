@@ -1661,6 +1661,10 @@ function renderFooterTotals() {
   const tots = calcTotals();
   $("ft-subtotal").textContent = formatMoney(tots.subtotal);
   $("ft-tax").textContent = formatMoney(tots.totalGst);
+  const taxLabel = state.meta.taxSystem === "CGST_SGST" ? "CGST + SGST"
+    : state.meta.taxSystem === "IGST" ? "IGST"
+    : "Tax (Exempt)";
+  $("ft-tax-label").textContent = taxLabel;
   $("ft-tds").textContent = `− ${formatMoney(tots.tdsVal)}`;
   $("ft-paid").textContent = `− ${formatMoney(state.totals.amountPaid)}`;
   $("ft-balance").textContent = formatMoney(tots.balance);
