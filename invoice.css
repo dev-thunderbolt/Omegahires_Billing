@@ -1,0 +1,1584 @@
+/* ============================================================
+   OMEGA HIRES — A4 INVOICE DOCUMENT
+   Three templates: Sovereign, Ledger, Pulse
+   ============================================================ */
+
+.a4 {
+  width: 794px;
+  min-height: 1123px;
+  background: #fff;
+  font-family: "Barlow", sans-serif;
+  font-size: 10px;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+
+.a4 .num { font-variant-numeric: tabular-nums; }
+.a4 .empty { color: var(--slate-400); font-style: italic; font-weight: 400; }
+
+
+/* ============================================================
+   TEMPLATE 1 — SOVEREIGN
+   Refined navy header, lime accents, classic Indian tax invoice
+   ============================================================ */
+
+.a4.sovereign .top-bar {
+  height: 6px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 70%, var(--lime) 70%, var(--lime) 100%);
+}
+
+.a4.sovereign .sov-header {
+  padding: 22px 40px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  border-bottom: 2px solid var(--navy);
+  align-items: flex-start;
+}
+
+.a4.sovereign .sov-brand img {
+  height: 56px;
+  width: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.a4.sovereign .sov-brand .tag {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  font-weight: 600;
+}
+
+.a4.sovereign .sov-brand .sub {
+  font-size: 9.5px;
+  font-style: italic;
+  color: var(--lime-dark);
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.a4.sovereign .sov-doctype {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.a4.sovereign .sov-doctype .label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+
+.a4.sovereign .sov-doctype .title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+  line-height: 0.9;
+  margin: 2px 0;
+}
+
+.a4.sovereign .sov-doctype .num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.a4.sovereign .sov-doctype .copy {
+  font-size: 9px;
+  color: var(--lime-dark);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.a4.sovereign .sov-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--navy-50);
+  border-bottom: 1px solid var(--navy-border);
+}
+.a4.sovereign .sov-meta-strip .cell {
+  padding: 10px 16px;
+  border-right: 1px solid var(--navy-border);
+}
+.a4.sovereign .sov-meta-strip .cell:last-child { border-right: none; }
+.a4.sovereign .sov-meta-strip .k {
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.sovereign .sov-meta-strip .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  color: var(--navy);
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.a4.sovereign .sov-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 40px 10px;
+  gap: 32px;
+}
+
+.a4.sovereign .party-block {
+  position: relative;
+}
+.a4.sovereign .party-block .label {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--lime);
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.a4.sovereign .party-block .name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  color: var(--navy);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+.a4.sovereign .party-block .row {
+  font-size: 9.5px;
+  color: var(--slate-700);
+  margin-bottom: 3px;
+  line-height: 1.45;
+  display: flex;
+  gap: 6px;
+}
+.a4.sovereign .party-block .row .k {
+  color: var(--slate-500);
+  font-weight: 500;
+  min-width: 62px;
+  font-size: 8.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+.a4.sovereign .party-block .row .v {
+  color: var(--ink);
+  font-weight: 500;
+  flex: 1;
+}
+.a4.sovereign .party-block .row .v.gst {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+
+.a4.sovereign .rec-card {
+  margin: 6px 40px 12px;
+  background: linear-gradient(135deg, var(--lime-50) 0%, #fafdf5 100%);
+  border-left: 4px solid var(--lime);
+  padding: 12px 16px;
+  border-radius: 0 4px 4px 0;
+}
+.a4.sovereign .rec-card .head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.a4.sovereign .rec-card .head .title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+}
+.a4.sovereign .rec-card .head .badge {
+  background: var(--lime);
+  color: var(--navy);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+.a4.sovereign .rec-card .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 20px;
+}
+.a4.sovereign .rec-card .grid .item {
+  font-size: 9px;
+  color: var(--slate-700);
+}
+.a4.sovereign .rec-card .grid .item .k {
+  font-size: 8px;
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+.a4.sovereign .rec-card .grid .item .v {
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.a4.sovereign .items {
+  padding: 6px 40px 6px;
+}
+.a4.sovereign .items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.a4.sovereign .items thead tr {
+  background: var(--navy);
+}
+.a4.sovereign .items thead th {
+  padding: 8px 8px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+}
+.a4.sovereign .items thead th.c { text-align: center; }
+.a4.sovereign .items thead th.r { text-align: right; }
+
+.a4.sovereign .items tbody tr {
+  border-bottom: 1px solid var(--slate-100);
+}
+.a4.sovereign .items tbody tr:nth-child(even) {
+  background: var(--slate-50);
+}
+.a4.sovereign .items tbody td {
+  padding: 8px 8px;
+  font-size: 9.5px;
+  color: var(--slate-700);
+  vertical-align: top;
+}
+.a4.sovereign .items tbody td.c { text-align: center; }
+.a4.sovereign .items tbody td.r { text-align: right; font-variant-numeric: tabular-nums; }
+.a4.sovereign .items tbody td.sr {
+  color: var(--navy);
+  font-weight: 700;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+}
+.a4.sovereign .items tbody td .code {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--navy);
+}
+.a4.sovereign .items tbody td .desc {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.a4.sovereign .totals-wrap {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  padding: 0 40px;
+  gap: 24px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.a4.sovereign .words {
+  background: var(--slate-50);
+  border-left: 3px solid var(--navy);
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+}
+.a4.sovereign .words .k {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.sovereign .words .v {
+  font-size: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.a4.sovereign .totals {
+  border: 1px solid var(--slate-200);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.a4.sovereign .totals .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 14px;
+  font-size: 9.5px;
+  color: var(--slate-700);
+}
+.a4.sovereign .totals .row:nth-child(odd) { background: var(--slate-50); }
+.a4.sovereign .totals .row .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.a4.sovereign .totals .row.neg .v { color: var(--rose); }
+.a4.sovereign .totals .row.grand {
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 14px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.a4.sovereign .totals .row.grand .v {
+  color: var(--lime);
+  font-size: 14px;
+}
+.a4.sovereign .totals .row.balance {
+  background: var(--lime-50);
+  border-top: 1px solid var(--navy-border);
+  font-weight: 700;
+  color: var(--navy);
+}
+.a4.sovereign .totals .row.balance .v {
+  color: var(--navy);
+  font-size: 12px;
+}
+
+.a4.sovereign .notes {
+  margin: 10px 40px 0;
+  padding: 8px 14px;
+  background: #fffbeb;
+  border-left: 3px solid var(--amber);
+  border-radius: 0 4px 4px 0;
+}
+.a4.sovereign .notes .k {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #92400e;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+.a4.sovereign .notes .v {
+  font-size: 9px;
+  color: var(--slate-700);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.a4.sovereign .foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.a4.sovereign .foot .grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  padding: 14px 40px 16px;
+  gap: 24px;
+  border-top: 1px solid var(--slate-200);
+  align-items: flex-start;
+}
+.a4.sovereign .foot .col-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+  border-bottom: 1.5px solid var(--lime);
+  display: inline-block;
+}
+.a4.sovereign .foot .bank-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 3px;
+  font-size: 9px;
+}
+.a4.sovereign .foot .bank-row .k {
+  color: var(--slate-500);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 600;
+  min-width: 56px;
+  padding-top: 1px;
+}
+.a4.sovereign .foot .bank-row .v {
+  color: var(--ink);
+  font-weight: 600;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 10px;
+}
+.a4.sovereign .foot .terms-list {
+  font-size: 8.5px;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+.a4.sovereign .foot .terms-list li {
+  margin-bottom: 3px;
+  list-style: none;
+  padding-left: 10px;
+  position: relative;
+}
+.a4.sovereign .foot .terms-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 5px;
+  width: 4px;
+  height: 4px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+.a4.sovereign .sig {
+  text-align: right;
+}
+.a4.sovereign .sig .for {
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.sovereign .sig .co {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 2px 0 14px;
+  letter-spacing: 0.03em;
+}
+.a4.sovereign .sig .hw {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: var(--navy);
+  height: 24px;
+  line-height: 1;
+  margin-bottom: -4px;
+  transform: rotate(-4deg);
+  transform-origin: bottom right;
+  display: inline-block;
+}
+.a4.sovereign .sig .line {
+  display: block;
+  width: 150px;
+  margin-left: auto;
+  border-top: 1.5px solid var(--navy);
+  margin-top: 4px;
+  padding-top: 3px;
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  font-weight: 600;
+}
+.a4.sovereign .sig .gen {
+  font-size: 8px;
+  color: var(--slate-400);
+  font-style: italic;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.a4.sovereign .bottom-bar {
+  height: 6px;
+  background: linear-gradient(90deg, var(--lime) 0%, var(--lime) 30%, var(--navy) 30%, var(--navy) 100%);
+}
+
+
+/* ============================================================
+   TEMPLATE 2 — LEDGER
+   Editorial; hero invoice number; monospace numerics; thin rules
+   ============================================================ */
+
+.a4.ledger {
+  font-family: "Barlow", sans-serif;
+  color: var(--ink);
+}
+
+.a4.ledger .lg-header {
+  padding: 50px 56px 24px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.a4.ledger .lg-eyebrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.ledger .lg-eyebrow .right { color: var(--lime-dark); }
+
+.a4.ledger .lg-headline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: flex-end;
+  margin-bottom: 28px;
+}
+.a4.ledger .lg-headline h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 72px;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.a4.ledger .lg-headline h1 .accent { color: var(--lime-dark); }
+.a4.ledger .lg-headline .meta-stack { text-align: right; }
+.a4.ledger .lg-headline .meta-stack .n-label {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.ledger .lg-headline .meta-stack .n-val {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+.a4.ledger .lg-headline .meta-stack .dates {
+  font-size: 9px;
+  color: var(--slate-600);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+.a4.ledger .lg-headline .meta-stack .dates .d-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.a4.ledger .lg-headline .meta-stack .dates .k {
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 8.5px;
+}
+.a4.ledger .lg-headline .meta-stack .dates .v {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.a4.ledger .lg-brand-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+.a4.ledger .lg-brand-row img {
+  height: 38px;
+  width: auto;
+}
+.a4.ledger .lg-brand-row .ids {
+  display: flex;
+  gap: 24px;
+  font-size: 9px;
+}
+.a4.ledger .lg-brand-row .ids .id-block .k {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.ledger .lg-brand-row .ids .id-block .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-top: 1px;
+}
+
+.a4.ledger .lg-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 22px 56px 6px;
+  gap: 56px;
+}
+.a4.ledger .lg-parties .col .label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.a4.ledger .lg-parties .col .name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+.a4.ledger .lg-parties .col .info {
+  font-size: 9.5px;
+  color: var(--slate-700);
+  line-height: 1.55;
+}
+.a4.ledger .lg-parties .col .info div { margin-bottom: 2px; }
+.a4.ledger .lg-parties .col .gst {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  font-size: 10.5px;
+  margin-top: 6px;
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--navy-50);
+  border-radius: 3px;
+}
+
+.a4.ledger .lg-rec {
+  margin: 8px 56px 14px;
+  padding: 12px 0;
+  border-top: 1px solid var(--slate-200);
+  border-bottom: 1px solid var(--slate-200);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.a4.ledger .lg-rec .lbl {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lime-dark);
+  font-weight: 700;
+}
+.a4.ledger .lg-rec .lbl .sub {
+  display: block;
+  font-family: "Barlow", sans-serif;
+  font-size: 8.5px;
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  margin-top: 3px;
+  text-transform: none;
+}
+.a4.ledger .lg-rec .body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px 18px;
+  font-size: 9px;
+}
+.a4.ledger .lg-rec .body .k {
+  color: var(--slate-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 8.5px;
+  font-weight: 600;
+}
+.a4.ledger .lg-rec .body .v {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 10px;
+  margin-top: 1px;
+}
+
+.a4.ledger .lg-items {
+  padding: 0 56px;
+}
+.a4.ledger .lg-items table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.a4.ledger .lg-items thead tr {
+  border-bottom: 1.5px solid var(--ink);
+}
+.a4.ledger .lg-items thead th {
+  padding: 8px 6px;
+  font-size: 8.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  font-weight: 700;
+  text-align: left;
+}
+.a4.ledger .lg-items thead th.c { text-align: center; }
+.a4.ledger .lg-items thead th.r { text-align: right; }
+
+.a4.ledger .lg-items tbody tr {
+  border-bottom: 1px solid var(--slate-200);
+}
+.a4.ledger .lg-items tbody td {
+  padding: 10px 6px;
+  font-size: 10px;
+  color: var(--ink);
+  vertical-align: top;
+}
+.a4.ledger .lg-items tbody td.c { text-align: center; }
+.a4.ledger .lg-items tbody td.r { text-align: right; font-variant-numeric: tabular-nums; }
+.a4.ledger .lg-items tbody td.sr {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  color: var(--lime-dark);
+  font-weight: 700;
+}
+.a4.ledger .lg-items tbody td .code-line {
+  font-size: 8.5px;
+  color: var(--slate-500);
+  letter-spacing: 0.05em;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.a4.ledger .lg-items tbody td .total {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.a4.ledger .lg-totals-wrap {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  padding: 16px 56px 0;
+  gap: 32px;
+  align-items: flex-start;
+}
+.a4.ledger .lg-words .k {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.a4.ledger .lg-words .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  border-left: 3px solid var(--lime);
+  padding-left: 10px;
+}
+.a4.ledger .lg-totals .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--slate-200);
+  font-size: 10px;
+  color: var(--slate-700);
+}
+.a4.ledger .lg-totals .row .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.a4.ledger .lg-totals .row.neg .v { color: var(--rose); }
+.a4.ledger .lg-totals .grand {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0 4px;
+  border-bottom: 2px solid var(--ink);
+  margin-top: 4px;
+}
+.a4.ledger .lg-totals .grand .l {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+}
+.a4.ledger .lg-totals .grand .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.a4.ledger .lg-totals .balance-line {
+  font-size: 9.5px;
+  color: var(--lime-dark);
+  margin-top: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.a4.ledger .lg-totals .balance-line .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.a4.ledger .lg-notes {
+  margin: 16px 56px 0;
+  font-size: 9.5px;
+  color: var(--slate-600);
+  line-height: 1.6;
+  white-space: pre-line;
+  padding-left: 14px;
+  border-left: 2px solid var(--slate-200);
+}
+
+.a4.ledger .lg-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 56px 28px;
+}
+.a4.ledger .lg-foot-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--slate-200);
+}
+.a4.ledger .lg-foot-grid .col-title {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.a4.ledger .lg-foot-grid .bank-line {
+  font-size: 9.5px;
+  color: var(--ink);
+  margin-bottom: 3px;
+  line-height: 1.5;
+}
+.a4.ledger .lg-foot-grid .bank-line .k {
+  color: var(--slate-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.a4.ledger .lg-foot-grid .bank-line .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  font-size: 10.5px;
+}
+.a4.ledger .lg-foot-grid .terms-list {
+  font-size: 8.5px;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+.a4.ledger .lg-foot-grid .terms-list li {
+  list-style: none;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 3px;
+}
+.a4.ledger .lg-foot-grid .terms-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--lime-dark);
+}
+.a4.ledger .lg-foot-grid .sig-col {
+  text-align: right;
+}
+.a4.ledger .lg-foot-grid .sig-col .for {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.ledger .lg-foot-grid .sig-col .co {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2px 0 16px;
+  letter-spacing: 0.02em;
+}
+.a4.ledger .lg-foot-grid .sig-col .hw {
+  font-family: "Caveat", cursive;
+  font-size: 24px;
+  color: var(--navy);
+  height: 24px;
+  margin-bottom: -2px;
+  transform: rotate(-4deg);
+  transform-origin: bottom right;
+  display: inline-block;
+}
+.a4.ledger .lg-foot-grid .sig-col .line {
+  display: block;
+  width: 140px;
+  margin-left: auto;
+  border-top: 1px solid var(--ink);
+  margin-top: 4px;
+  padding-top: 3px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  font-weight: 600;
+}
+.a4.ledger .lg-foot-grid .sig-col .gen {
+  font-size: 7.5px;
+  color: var(--slate-400);
+  font-style: italic;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+
+.a4.ledger .lg-bottom-rule {
+  position: absolute;
+  bottom: 0;
+  left: 56px;
+  right: 56px;
+  height: 4px;
+  background: var(--lime);
+}
+
+
+/* ============================================================
+   TEMPLATE 3 — PULSE
+   Lime-led, asymmetric, modern, big numbers
+   ============================================================ */
+
+.a4.pulse {
+  background:
+    radial-gradient(circle at 0% 0%, var(--lime-50) 0%, transparent 30%),
+    #fff;
+}
+
+.a4.pulse .p-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 36px 40px 24px;
+}
+.a4.pulse .p-head .left img {
+  height: 50px;
+  width: auto;
+  margin-bottom: 16px;
+}
+.a4.pulse .p-head .left .co {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+.a4.pulse .p-head .left .info-row {
+  font-size: 9px;
+  color: var(--slate-600);
+  margin-bottom: 2px;
+  line-height: 1.5;
+}
+
+.a4.pulse .p-head .right {
+  text-align: right;
+}
+.a4.pulse .p-head .right .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--ink);
+  color: var(--lime);
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.a4.pulse .p-head .right .badge .dot {
+  width: 6px; height: 6px;
+  background: var(--lime);
+  border-radius: 50%;
+}
+.a4.pulse .p-head .right .num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  line-height: 1;
+}
+.a4.pulse .p-head .right .dates {
+  font-size: 9px;
+  color: var(--slate-600);
+  margin-top: 8px;
+}
+.a4.pulse .p-head .right .dates .row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+.a4.pulse .p-head .right .dates .k {
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 600;
+}
+.a4.pulse .p-head .right .dates .v {
+  font-weight: 700;
+  color: var(--ink);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+}
+
+.a4.pulse .p-amount-strip {
+  margin: 0 40px 20px;
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 24px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.a4.pulse .p-amount-strip::after {
+  content: "";
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, var(--lime) 0%, transparent 70%);
+  opacity: 0.25;
+}
+.a4.pulse .p-amount-strip .lbl {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.a4.pulse .p-amount-strip .amount {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--lime);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.a4.pulse .p-amount-strip .due {
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+.a4.pulse .p-amount-strip .due .k {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  font-weight: 600;
+}
+.a4.pulse .p-amount-strip .due .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.a4.pulse .p-parties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 40px 18px;
+  gap: 24px;
+}
+.a4.pulse .p-parties .col {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+}
+.a4.pulse .p-parties .col.bill::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 14px; right: 14px;
+  height: 3px;
+  background: var(--lime);
+  border-radius: 0 0 3px 3px;
+}
+.a4.pulse .p-parties .col.from::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 14px; right: 14px;
+  height: 3px;
+  background: var(--navy);
+  border-radius: 0 0 3px 3px;
+}
+.a4.pulse .p-parties .col .lbl {
+  font-size: 8.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.a4.pulse .p-parties .col .name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+.a4.pulse .p-parties .col .info {
+  font-size: 9px;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+.a4.pulse .p-parties .col .info div { margin-bottom: 1px; }
+.a4.pulse .p-parties .col .gst {
+  display: inline-block;
+  margin-top: 4px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  background: var(--navy-50);
+  border-radius: 3px;
+}
+
+.a4.pulse .p-rec {
+  margin: 0 40px 14px;
+  padding: 12px 16px;
+  background: var(--lime-50);
+  border-radius: 10px;
+  border: 1px solid #d9e8c4;
+}
+.a4.pulse .p-rec .head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.a4.pulse .p-rec .head .icon {
+  width: 22px;
+  height: 22px;
+  background: var(--lime);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 11px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.a4.pulse .p-rec .head .title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 700;
+}
+.a4.pulse .p-rec .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 24px;
+  font-size: 9px;
+}
+.a4.pulse .p-rec .grid .item .k {
+  font-size: 8px;
+  color: var(--slate-500);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.a4.pulse .p-rec .grid .item .v {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 10.5px;
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+
+.a4.pulse .p-items {
+  padding: 0 40px;
+}
+.a4.pulse .p-items .row-hd {
+  display: grid;
+  grid-template-columns: 24px 80px 1fr 36px 80px 90px;
+  gap: 12px;
+  padding: 8px 12px;
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  border-bottom: 1.5px solid var(--ink);
+}
+.a4.pulse .p-items .row-hd .r { text-align: right; }
+.a4.pulse .p-items .row-hd .c { text-align: center; }
+
+.a4.pulse .p-items .item-line {
+  display: grid;
+  grid-template-columns: 24px 80px 1fr 36px 80px 90px;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--slate-200);
+  font-size: 10px;
+  color: var(--ink);
+  align-items: center;
+}
+.a4.pulse .p-items .item-line .sr {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 16px;
+  color: var(--lime-dark);
+  font-weight: 700;
+}
+.a4.pulse .p-items .item-line .codes .code {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+.a4.pulse .p-items .item-line .codes .sac {
+  font-size: 8.5px;
+  color: var(--slate-500);
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+}
+.a4.pulse .p-items .item-line .desc {
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.35;
+}
+.a4.pulse .p-items .item-line .desc .meta {
+  display: block;
+  font-size: 8.5px;
+  color: var(--slate-500);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.a4.pulse .p-items .item-line .qty {
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+.a4.pulse .p-items .item-line .rate {
+  text-align: right;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 11px;
+  color: var(--slate-700);
+  font-variant-numeric: tabular-nums;
+}
+.a4.pulse .p-items .item-line .total {
+  text-align: right;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+.a4.pulse .p-foot-wrap {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  padding: 16px 40px 0;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.a4.pulse .p-totals {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.a4.pulse .p-totals .row {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 14px;
+  font-size: 9.5px;
+  color: var(--slate-700);
+}
+.a4.pulse .p-totals .row:not(:last-child) { border-bottom: 1px solid var(--slate-100); }
+.a4.pulse .p-totals .row .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.a4.pulse .p-totals .row.neg .v { color: var(--rose); }
+.a4.pulse .p-totals .row.grand {
+  background: var(--ink);
+  color: rgba(255,255,255,0.8);
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+}
+.a4.pulse .p-totals .row.grand .v {
+  color: var(--lime);
+  font-size: 14px;
+}
+.a4.pulse .p-totals .row.balance {
+  background: var(--lime-50);
+  color: var(--lime-dark);
+  font-weight: 700;
+}
+.a4.pulse .p-totals .row.balance .v { color: var(--navy); font-size: 13px; }
+
+.a4.pulse .p-side {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.a4.pulse .p-side .words {
+  background: var(--slate-50);
+  border-radius: 8px;
+  padding: 10px 14px;
+  border-left: 3px solid var(--lime);
+}
+.a4.pulse .p-side .words .k {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+}
+.a4.pulse .p-side .words .v {
+  font-size: 10px;
+  color: var(--ink);
+  font-weight: 600;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.a4.pulse .p-side .notes {
+  font-size: 9px;
+  color: var(--slate-600);
+  line-height: 1.5;
+  padding: 10px 14px;
+  background: #fffbeb;
+  border-radius: 8px;
+  border-left: 3px solid var(--amber);
+  white-space: pre-line;
+}
+.a4.pulse .p-side .notes .k {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #92400e;
+  font-weight: 700;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.a4.pulse .p-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 40px 22px;
+  background: var(--slate-50);
+  border-top: 1px solid var(--slate-200);
+}
+.a4.pulse .p-foot-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 24px;
+}
+.a4.pulse .p-foot-grid .col-title {
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.a4.pulse .p-foot-grid .col-title::before {
+  content: "";
+  width: 14px;
+  height: 2px;
+  background: var(--lime);
+}
+.a4.pulse .p-foot-grid .bank-line {
+  font-size: 9px;
+  color: var(--ink);
+  margin-bottom: 2px;
+  display: flex;
+  gap: 8px;
+  line-height: 1.4;
+}
+.a4.pulse .p-foot-grid .bank-line .k {
+  color: var(--slate-500);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 600;
+  min-width: 50px;
+}
+.a4.pulse .p-foot-grid .bank-line .v {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+}
+.a4.pulse .p-foot-grid .terms-list {
+  font-size: 8.5px;
+  color: var(--slate-600);
+  line-height: 1.5;
+}
+.a4.pulse .p-foot-grid .terms-list li {
+  list-style: none;
+  margin-bottom: 3px;
+  padding-left: 12px;
+  position: relative;
+}
+.a4.pulse .p-foot-grid .terms-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--lime-dark);
+  font-weight: 700;
+}
+.a4.pulse .p-foot-grid .sig-col {
+  text-align: right;
+}
+.a4.pulse .p-foot-grid .sig-col .for {
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--slate-500);
+  font-weight: 600;
+}
+.a4.pulse .p-foot-grid .sig-col .co {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2px 0 12px;
+}
+.a4.pulse .p-foot-grid .sig-col .hw {
+  font-family: "Caveat", cursive;
+  font-size: 22px;
+  color: var(--navy);
+  height: 22px;
+  margin-bottom: -4px;
+  transform: rotate(-4deg);
+  transform-origin: bottom right;
+  display: inline-block;
+}
+.a4.pulse .p-foot-grid .sig-col .line {
+  display: block;
+  width: 130px;
+  margin-left: auto;
+  border-top: 1.5px solid var(--ink);
+  margin-top: 4px;
+  padding-top: 3px;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate-600);
+  font-weight: 600;
+}
+.a4.pulse .p-foot-grid .sig-col .gen {
+  font-size: 7.5px;
+  color: var(--slate-400);
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* Signature Image Placement */
+.sig-img-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 48px;
+  margin-bottom: 2px;
+}
+.sig-img {
+  max-height: 48px;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+}
+.sig-placeholder {
+  font-size: 8.5px;
+  color: var(--slate-400);
+  font-style: italic;
+  margin-bottom: 8px;
+}

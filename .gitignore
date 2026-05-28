@@ -1,0 +1,5 @@
+.DS_Store
+Billed/
+*.pdf
+node_modules/
+.env
